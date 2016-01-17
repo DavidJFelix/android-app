@@ -1,0 +1,51 @@
+{
+  "project_info": {
+    "project_id": "dinnersolutions-feasted",
+    "project_number": "531566137905",
+    "name": "DinnerSolutions Feasted"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:531566137905:android:efaecf0bbd06512b",
+        "client_id": "android:com.dinnersolutions.feasted",
+        "client_type": 1,
+        "android_client_info": {
+          "package_name": "com.dinnersolutions.feasted"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "531566137905-onuncnpj6jmfjsn15ntm4cc5s3doeppn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dinnersolutions.feasted",
+            "certificate_hash": "B66CC462A90EDB59FF18DEFDBA5E8593B2F298CD"
+          }
+        }
+      ],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "cloud_messaging_service": {
+          "status": 1,
+          "apns_config": []
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "google_signin_service": {
+          "status": 2
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "client_info": [],
+  "ARTIFACT_VERSION": "1"
+}
