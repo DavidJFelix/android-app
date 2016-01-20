@@ -4,24 +4,20 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.dinnersolutions.feasted.api.model.User;
-import com.dinnersolutions.feasted.application.FeastedApplication;
-
-import javax.inject.Inject;
 
 /**
  * Created by Dejan Ristic on 1/19/16.
  */
 public class AuthManager {
 
-    @Inject
-    SharedPreferences prefs;
+    private SharedPreferences prefs;
 
     public static final String BEARER_TOKEN = "bearer_token";
 
     public User activeUser;
 
-    public AuthManager(Context context) {
-        inject(context);
+    public AuthManager(Context context, SharedPreferences prefs) {
+        this.prefs = prefs;
     }
 
     public void saveBearerToken(String bearerToken) {
@@ -38,9 +34,4 @@ public class AuthManager {
         prefs.edit().remove(BEARER_TOKEN).apply();
     }
 
-
-    public void inject(Context context) {
-        FeastedApplication app = FeastedApplication.from(context);
-        app.component().inject(this);
-    }
 }

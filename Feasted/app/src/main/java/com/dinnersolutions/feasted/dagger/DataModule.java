@@ -25,7 +25,7 @@ public class DataModule {
 
     @Provides
     @Singleton
-    AuthManager provideAuthManager(Context context) {
-        return new AuthManager(context);
+    AuthManager provideAuthManager(Context context, SharedPreferences prefs) {
+        return new AuthManager(context, prefs);
     }
 }

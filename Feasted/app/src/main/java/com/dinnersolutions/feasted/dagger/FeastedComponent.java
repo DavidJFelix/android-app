@@ -1,7 +1,6 @@
 package com.dinnersolutions.feasted.dagger;
 
-import android.support.v7.app.AppCompatActivity;
-
+import com.dinnersolutions.feasted.MainActivity;
 import com.dinnersolutions.feasted.api.AuthManager;
 import com.dinnersolutions.feasted.application.FeastedApplication;
 
@@ -18,7 +17,7 @@ public interface FeastedComponent {
 
     void inject(FeastedApplication app);
 
-    void inject(AppCompatActivity activity);
+    void inject(MainActivity activity);
 
     void inject(AuthManager manager);
 

@@ -42,6 +42,6 @@
 
     <!-- Server Client ID.  This should be a valid Web OAuth 2.0 Client ID obtained
          from https://console.developers.google.com/ -->
-    <string name="server_client_id">531566137905-onuncnpj6jmfjsn15ntm4cc5s3doeppn.apps.googleusercontent.com</string>
+    <string name="server_client_id">531566137905-fhljh7kirg7v9kg4019qd6aaob57gd4s.apps.googleusercontent.com</string>
     <string name="title_text">Google Sign-In\\nQuickstart</string>
 </resources>
