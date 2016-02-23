@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private void checkLoginStatus() {
         if (!authManager.isAuthenticated()) {
             startActivity(new Intent(this, LoginActivity.class));
+            finish();
         }
     }
 

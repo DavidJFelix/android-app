@@ -26,6 +26,7 @@ import com.google.android.gms.common.api.Status;
 import javax.inject.Inject;
 
 import butterknife.Bind;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 import retrofit.Callback;
 import retrofit.Response;
@@ -53,6 +54,7 @@ public class LoginActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         inject(this);
+        ButterKnife.bind(this);
         init();
     }
 

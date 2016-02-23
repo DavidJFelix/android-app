@@ -11,8 +11,8 @@
 
     <ImageView
         android:id="@+id/app_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
@@ -23,21 +23,28 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/app_logo"
         android:layout_centerHorizontal="true"
-        android:text="@string/app_name" />
+        android:text="@string/app_name"
+        android:textSize="24dp" />
 
-    <TextView
+    <Button
         android:id="@+id/explore_app"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:background="?attr/selectableItemBackground"
+        android:drawableRight="@drawable/ic_keyboard_arrow_right_black_24dp"
+        android:text="Explore the app" />
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/google_plus_button"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/explore_app"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" />
 
 
 </RelativeLayout>
