@@ -178,6 +178,11 @@ public class LoginActivity extends AppCompatActivity implements
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
 
+    @OnClick(R.id.explore_app)
+    public void onExploreAppClicked() {
+        startActivity(new Intent(this, MainActivity.class));
+    }
+
 
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
