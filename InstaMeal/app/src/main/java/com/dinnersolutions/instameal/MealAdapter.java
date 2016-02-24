@@ -50,7 +50,7 @@ public class MealAdapter extends
     @Override
     public void onBindViewHolder(MealAdapter.MealViewHolder viewHolder, int position) {
         Meal meal = meals.get(position);
-        viewHolder.setMeal(meal, context);
+        viewHolder.setMeal(meal);
     }
 
     public class MealViewHolder extends RecyclerView.ViewHolder {
@@ -62,15 +62,15 @@ public class MealAdapter extends
 
         public MealViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.bind(itemView);
+            ButterKnife.bind(this, itemView);
         }
 
-        public void setMeal(Meal meal, Context context) {
+        public void setMeal(Meal meal) {
             this.meal = meal;
-            layoutMeal(context);
+            layoutMeal();
         }
 
-        private void layoutMeal(Context context) {
+        private void layoutMeal() {
             Glide.with(context).load(meal.imageUrl).into(mealImage);
         }
     }

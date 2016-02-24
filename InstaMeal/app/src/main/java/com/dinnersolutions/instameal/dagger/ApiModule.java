@@ -6,7 +6,6 @@ import com.dinnersolutions.instameal.api.AuthManager;
 import com.dinnersolutions.instameal.api.InstamealApi;
 import com.dinnersolutions.instameal.api.InstamealService;
 import com.dinnersolutions.instameal.api.okhttp.InstamealHttpClient;
-import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -67,7 +66,7 @@ public class ApiModule {
     @Singleton
     Gson provideGson() {
         return new GsonBuilder()
-                .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
+//                .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
                 .create();
     }
 

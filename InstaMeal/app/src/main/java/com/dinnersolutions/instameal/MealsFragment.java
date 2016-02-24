@@ -60,9 +60,10 @@ public class MealsFragment extends Fragment {
     }
 
     private void initList() {
+        mealAdapter = new MealAdapter(getActivity(), null);
         mealList.setLayoutManager(new LinearLayoutManager(getContext()));
         mealList.setHasFixedSize(true);
-        mealAdapter = new MealAdapter(getActivity(), null);
+        mealList.setAdapter(mealAdapter);
     }
 
     private void loadMeals() {
