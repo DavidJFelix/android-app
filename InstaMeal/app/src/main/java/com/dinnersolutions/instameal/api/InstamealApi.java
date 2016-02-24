@@ -9,12 +9,12 @@ import retrofit.Callback;
 /**
  * Created by Dejan Ristic on 1/19/16.
  */
-public class FeastedApi {
+public class InstamealApi {
 
-    private FeastedService service;
+    private InstamealService service;
     private AuthManager authManager;
 
-    public FeastedApi(FeastedService service, AuthManager authManager) {
+    public InstamealApi(InstamealService service, AuthManager authManager) {
         this.service = service;
         this.authManager = authManager;
     }

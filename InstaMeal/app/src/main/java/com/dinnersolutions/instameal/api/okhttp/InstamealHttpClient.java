@@ -11,9 +11,9 @@ import com.squareup.okhttp.logging.HttpLoggingInterceptor;
 /**
  * Created by Dejan Ristic on 1/19/16.
  */
-public class FeastedHttpClient extends OkHttpClient {
+public class InstamealHttpClient extends OkHttpClient {
 
-    public FeastedHttpClient(Context context, AuthManager authManager, boolean isProduction) {
+    public InstamealHttpClient(Context context, AuthManager authManager, boolean isProduction) {
 
         interceptors().add(chain -> {
 

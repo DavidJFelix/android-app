@@ -9,9 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.dinnersolutions.instameal.api.AuthManager;
-import com.dinnersolutions.instameal.api.FeastedApi;
+import com.dinnersolutions.instameal.api.InstamealApi;
 import com.dinnersolutions.instameal.api.response.TokenUserResponse;
-import com.dinnersolutions.instameal.application.FeastedApplication;
+import com.dinnersolutions.instameal.application.InstamealApplication;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -39,7 +39,7 @@ public class LoginActivity extends AppCompatActivity implements
     private static final int RC_SIGN_IN = 9001;
 
     @Inject
-    FeastedApi feastedApi;
+    InstamealApi instamealApi;
     @Inject
     AuthManager authManager;
 
@@ -137,7 +137,7 @@ public class LoginActivity extends AppCompatActivity implements
 
             authManager.saveBearerToken(acct.getIdToken());
 
-            feastedApi.getTokenAndUser(new Callback<TokenUserResponse>() {
+            instamealApi.getTokenAndUser(new Callback<TokenUserResponse>() {
                 @Override
                 public void onResponse(Response<TokenUserResponse> response, Retrofit retrofit) {
                     if (response.isSuccess()) {
@@ -204,7 +204,7 @@ public class LoginActivity extends AppCompatActivity implements
     }
 
     public void inject(Context context) {
-        FeastedApplication app = FeastedApplication.from(context);
+        InstamealApplication app = InstamealApplication.from(context);
         app.component().inject(this);
     }
 }

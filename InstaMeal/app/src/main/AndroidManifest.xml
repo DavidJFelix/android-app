@@ -3,7 +3,7 @@
     package="com.dinnersolutions.instameal">
 
     <application
-        android:name=".application.FeastedApplication"
+        android:name=".application.InstamealApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"

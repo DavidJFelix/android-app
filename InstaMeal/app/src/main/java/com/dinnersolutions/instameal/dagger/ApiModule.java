@@ -3,9 +3,9 @@ package com.dinnersolutions.instameal.dagger;
 import android.content.Context;
 
 import com.dinnersolutions.instameal.api.AuthManager;
-import com.dinnersolutions.instameal.api.FeastedApi;
-import com.dinnersolutions.instameal.api.okhttp.FeastedHttpClient;
-import com.dinnersolutions.instameal.api.FeastedService;
+import com.dinnersolutions.instameal.api.InstamealApi;
+import com.dinnersolutions.instameal.api.InstamealService;
+import com.dinnersolutions.instameal.api.okhttp.InstamealHttpClient;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -58,8 +58,8 @@ public class ApiModule {
 
     @Provides
     @Singleton
-    FeastedHttpClient provideHttpClient(Context context, AuthManager authManager, boolean isProduction) {
-        return new FeastedHttpClient(context, authManager, isProduction);
+    InstamealHttpClient provideHttpClient(Context context, AuthManager authManager, boolean isProduction) {
+        return new InstamealHttpClient(context, authManager, isProduction);
     }
 
 
@@ -73,19 +73,19 @@ public class ApiModule {
 
     @Provides
     @Singleton
-    FeastedService provideTripService(FeastedHttpClient feastedHttpClient, Gson gson, String endpoint) {
+    InstamealService provideTripService(InstamealHttpClient feastedHttpClient, Gson gson, String endpoint) {
         return new Retrofit.Builder()
                 .client(feastedHttpClient)
                 .baseUrl(endpoint)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .build().create(FeastedService.class);
+                .build().create(InstamealService.class);
     }
 
     @Provides
     @Singleton
-    FeastedApi provideFeastedApi(FeastedService service, AuthManager manager) {
-        return new FeastedApi(service, manager);
+    InstamealApi provideFeastedApi(InstamealService service, AuthManager manager) {
+        return new InstamealApi(service, manager);
     }
 
 }

@@ -10,7 +10,7 @@ import retrofit.http.POST;
 /**
  * Created by Dejan Ristic on 1/19/16.
  */
-public interface FeastedService {
+public interface InstamealService {
 
     @POST("/user/by-token")
     Call<TokenUserResponse> getTokenAndUser(@Body TokenRequest request);
