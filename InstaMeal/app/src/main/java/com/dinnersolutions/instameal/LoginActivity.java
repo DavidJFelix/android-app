@@ -79,6 +79,12 @@ public class LoginActivity extends AppCompatActivity implements
     }
 
 
+    private void checkLoginStatus() {
+        if (authManager.isAuthenticated()) {
+            startActivity(new Intent(this, MainActivity.class));
+        }
+    }
+
     @Override
     public void onStart() {
         super.onStart();
@@ -103,6 +109,12 @@ public class LoginActivity extends AppCompatActivity implements
                 }
             });
         }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mGoogleApiClient.disconnect();
     }
 
     @Override
