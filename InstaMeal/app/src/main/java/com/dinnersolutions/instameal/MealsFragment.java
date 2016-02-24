@@ -41,7 +41,6 @@ public class MealsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         inject(getActivity());
-        ButterKnife.bind(getActivity());
     }
 
     @Override
@@ -54,6 +53,7 @@ public class MealsFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        ButterKnife.bind(this, view);
         loadMeals();
     }
 
