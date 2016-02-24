@@ -1,11 +1,9 @@
 package com.dinnersolutions.instameal.api;
 
-import com.dinnersolutions.instameal.api.model.Meal;
 import com.dinnersolutions.instameal.api.request.TokenRequest;
+import com.dinnersolutions.instameal.api.response.MealResponse;
 import com.dinnersolutions.instameal.api.response.TokenUserResponse;
 import com.google.android.gms.maps.model.LatLng;
-
-import java.util.List;
 
 import retrofit.Call;
 import retrofit.Callback;
@@ -29,8 +27,8 @@ public class InstamealApi {
         tokenUserResponseCall.enqueue(responseCallback);
     }
 
-    public void getMeals(LatLng latLng, int radius, Callback<List<Meal>> mealCallback) {
-        Call<List<Meal>> mealCall = service.getMeals(latLng.latitude, latLng.longitude, radius);
+    public void getMeals(LatLng latLng, int radius, Callback<MealResponse> mealCallback) {
+        Call<MealResponse> mealCall = service.getMeals(latLng.latitude, latLng.longitude, radius);
         mealCall.enqueue(mealCallback);
     }
 

@@ -1,10 +1,8 @@
 package com.dinnersolutions.instameal.api;
 
-import com.dinnersolutions.instameal.api.model.Meal;
 import com.dinnersolutions.instameal.api.request.TokenRequest;
+import com.dinnersolutions.instameal.api.response.MealResponse;
 import com.dinnersolutions.instameal.api.response.TokenUserResponse;
-
-import java.util.List;
 
 import retrofit.Call;
 import retrofit.http.Body;
@@ -21,5 +19,5 @@ public interface InstamealService {
     Call<TokenUserResponse> getTokenAndUser(@Body TokenRequest request);
 
     @GET("/meals")
-    Call<List<Meal>> getMeals(@Query("lat") double lat, @Query("lng") double lng, @Query("radius") int radius);
+    Call<MealResponse> getMeals(@Query("lat") double lat, @Query("lng") double lng, @Query("radius") int radius);
 }

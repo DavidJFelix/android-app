@@ -10,11 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.dinnersolutions.instameal.api.InstamealApi;
-import com.dinnersolutions.instameal.api.model.Meal;
+import com.dinnersolutions.instameal.api.response.MealResponse;
 import com.dinnersolutions.instameal.application.InstamealApplication;
 import com.google.android.gms.maps.model.LatLng;
-
-import java.util.List;
 
 import javax.inject.Inject;
 
@@ -60,18 +58,18 @@ public class MealsFragment extends Fragment {
     }
 
     private void loadMeals() {
-        instamealApi.getMeals(new LatLng(39.15, -84.42), 10, new Callback<List<Meal>>() {
+        instamealApi.getMeals(new LatLng(39.15, -84.42), 10, new Callback<MealResponse>() {
             @Override
-            public void onResponse(Response<List<Meal>> response, Retrofit retrofit) {
+            public void onResponse(Response<MealResponse> response, Retrofit retrofit) {
                 if (response.isSuccess()) {
-                    mealAdapter = new MealAdapter(response.body());
+                    mealAdapter = new MealAdapter(getActivity(), response.body().meals);
                     mealList.setAdapter(mealAdapter);
                 }
             }
 
             @Override
             public void onFailure(Throwable t) {
-                Log.e("Meals", t.getMessage());
+                Log.e("MealsError", t.getMessage());
             }
         });
     }
