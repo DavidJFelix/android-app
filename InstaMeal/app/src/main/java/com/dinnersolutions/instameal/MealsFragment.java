@@ -11,9 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.dinnersolutions.instameal.api.InstamealApi;
+import com.dinnersolutions.instameal.api.model.Meal;
 import com.dinnersolutions.instameal.api.response.MealResponse;
 import com.dinnersolutions.instameal.application.InstamealApplication;
 import com.google.android.gms.maps.model.LatLng;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -73,7 +77,14 @@ public class MealsFragment extends Fragment {
             public void onResponse(Response<MealResponse> response, Retrofit retrofit) {
                 if (response.isSuccess()) {
                     //todo npe
-                    mealAdapter.updateMeals(response.body().meals);
+
+                    //todo replicate meal for show
+                    List<Meal> expandedList = new ArrayList<Meal>();
+                    for (int i = 0; i < 100; i++) {
+                        expandedList.add(response.body().meals.get(0));
+                    }
+
+                    mealAdapter.updateMeals(expandedList);
                 }
             }
 
