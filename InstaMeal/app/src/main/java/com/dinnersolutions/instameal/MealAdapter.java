@@ -6,8 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.dinnersolutions.instameal.api.model.Meal;
 
 import java.util.List;
@@ -57,6 +57,14 @@ public class MealAdapter extends
 
         @Bind(R.id.meal_image)
         ImageView mealImage;
+        @Bind(R.id.name)
+        TextView mealName;
+        @Bind(R.id.price)
+        TextView mealPrice;
+        @Bind(R.id.zipcode)
+        TextView mealZipcode;
+        @Bind(R.id.time)
+        TextView mealTime;
 
         private Meal meal;
 
@@ -71,7 +79,15 @@ public class MealAdapter extends
         }
 
         private void layoutMeal() {
-            Glide.with(context).load(meal.imageUrl).into(mealImage);
+            //todo uncomment when image is reasonable size
+            //Glide.with(context).load(meal.imageUrl).into(mealImage);
+            mealName.setText(meal.name);
+            mealPrice.setText("$" + String.valueOf(meal.price));
+
+            //todo use actual data when we have location services / date helper
+            mealZipcode.setText("41071");
+            mealTime.setText("Ready from 3:00 - 3:45 pm.");
+
         }
     }
 }

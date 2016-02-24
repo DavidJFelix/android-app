@@ -6,7 +6,6 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -60,9 +59,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager() {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFrag(MealsFragment.newInstance(), "Meals");
-        adapter.addFrag(DummyFragment.newInstance(ContextCompat.getColor(this, R.color.ripple_material_light)), "Meals");
-        adapter.addFrag(DummyFragment.newInstance(ContextCompat.getColor(this, R.color.button_material_dark)), "Meals");
+        adapter.addFrag(MealsFragment.newInstance(), "MOST RECENT");
+        adapter.addFrag(MealsFragment.newInstance(), "NEARBY");
+        adapter.addFrag(MealsFragment.newInstance(), "RATING");
         mainPager.setAdapter(adapter);
     }
 

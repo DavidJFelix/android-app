@@ -80,7 +80,7 @@ public class MealsFragment extends Fragment {
 
                     //todo replicate meal for show
                     List<Meal> expandedList = new ArrayList<Meal>();
-                    for (int i = 0; i < 100; i++) {
+                    for (int i = 0; i < 10; i++) {
                         expandedList.add(response.body().meals.get(0));
                     }
 
