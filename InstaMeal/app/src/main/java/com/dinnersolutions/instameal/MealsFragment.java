@@ -3,6 +3,7 @@ package com.dinnersolutions.instameal;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -54,16 +55,24 @@ public class MealsFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
+        initList();
         loadMeals();
     }
 
+    private void initList() {
+        mealList.setLayoutManager(new LinearLayoutManager(getContext()));
+        mealList.setHasFixedSize(true);
+        mealAdapter = new MealAdapter(getActivity(), null);
+    }
+
     private void loadMeals() {
+
         instamealApi.getMeals(new LatLng(39.15, -84.42), 10, new Callback<MealResponse>() {
             @Override
             public void onResponse(Response<MealResponse> response, Retrofit retrofit) {
                 if (response.isSuccess()) {
-                    mealAdapter = new MealAdapter(getActivity(), response.body().meals);
-                    mealList.setAdapter(mealAdapter);
+                    //todo npe
+                    mealAdapter.updateMeals(response.body().meals);
                 }
             }
 

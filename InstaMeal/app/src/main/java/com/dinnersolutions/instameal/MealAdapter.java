@@ -29,6 +29,11 @@ public class MealAdapter extends
         this.meals = meals;
     }
 
+    public void updateMeals(List<Meal> meals) {
+        this.meals = meals;
+        notifyDataSetChanged();
+    }
+
     @Override
     public int getItemCount() {
         return meals != null ? meals.size() : 0;
