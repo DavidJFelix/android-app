@@ -2,6 +2,7 @@ package com.dinnersolutions.instameal.dagger;
 
 import com.dinnersolutions.instameal.LoginActivity;
 import com.dinnersolutions.instameal.MainActivity;
+import com.dinnersolutions.instameal.MealsFragment;
 import com.dinnersolutions.instameal.api.AuthManager;
 import com.dinnersolutions.instameal.application.InstamealApplication;
 
@@ -21,6 +22,8 @@ public interface InstamealComponent {
     void inject(MainActivity activity);
 
     void inject(LoginActivity activity);
+
+    void inject(MealsFragment fragment);
 
     void inject(AuthManager manager);
 

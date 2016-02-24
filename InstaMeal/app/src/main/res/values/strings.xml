@@ -44,4 +44,7 @@
          from https://console.developers.google.com/ -->
     <string name="server_client_id">531566137905-fhljh7kirg7v9kg4019qd6aaob57gd4s.apps.googleusercontent.com</string>
     <string name="title_text">Google Sign-In\\nQuickstart</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager() {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFrag(DummyFragment.newInstance(ContextCompat.getColor(this, R.color.accent_material_light)), "Meals");
+        adapter.addFrag(MealsFragment.newInstance(), "Meals");
         adapter.addFrag(DummyFragment.newInstance(ContextCompat.getColor(this, R.color.ripple_material_light)), "Meals");
         adapter.addFrag(DummyFragment.newInstance(ContextCompat.getColor(this, R.color.button_material_dark)), "Meals");
         mainPager.setAdapter(adapter);
