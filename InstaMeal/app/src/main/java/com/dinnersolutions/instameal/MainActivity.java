@@ -14,7 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.dinnersolutions.instameal.api.AuthManager;
-import com.dinnersolutions.instameal.api.InstamealApi;
+import com.dinnersolutions.instameal.api.InstamealsApi;
 import com.dinnersolutions.instameal.application.InstamealApplication;
 
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
 
     @Inject
-    InstamealApi instamealApi;
+    InstamealsApi instamealsApi;
     @Inject
     AuthManager authManager;
 

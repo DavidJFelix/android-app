@@ -3,8 +3,8 @@ package com.dinnersolutions.instameal.dagger;
 import android.content.Context;
 
 import com.dinnersolutions.instameal.api.AuthManager;
-import com.dinnersolutions.instameal.api.InstamealApi;
-import com.dinnersolutions.instameal.api.InstamealService;
+import com.dinnersolutions.instameal.api.InstamealsApi;
+import com.dinnersolutions.instameal.api.InstamealsService;
 import com.dinnersolutions.instameal.api.okhttp.InstamealHttpClient;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -72,19 +72,19 @@ public class ApiModule {
 
     @Provides
     @Singleton
-    InstamealService provideTripService(InstamealHttpClient feastedHttpClient, Gson gson, String endpoint) {
+    InstamealsService provideTripService(InstamealHttpClient feastedHttpClient, Gson gson, String endpoint) {
         return new Retrofit.Builder()
                 .client(feastedHttpClient)
                 .baseUrl(endpoint)
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .build().create(InstamealService.class);
+                .build().create(InstamealsService.class);
     }
 
     @Provides
     @Singleton
-    InstamealApi provideFeastedApi(InstamealService service, AuthManager manager) {
-        return new InstamealApi(service, manager);
+    InstamealsApi provideFeastedApi(InstamealsService service, AuthManager manager) {
+        return new InstamealsApi(service, manager);
     }
 
 }

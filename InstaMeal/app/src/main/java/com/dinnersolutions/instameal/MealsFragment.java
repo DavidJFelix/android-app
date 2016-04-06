@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.dinnersolutions.instameal.api.InstamealApi;
+import com.dinnersolutions.instameal.api.InstamealsApi;
 import com.dinnersolutions.instameal.api.model.Meal;
 import com.dinnersolutions.instameal.api.response.MealResponse;
 import com.dinnersolutions.instameal.application.InstamealApplication;
@@ -31,7 +31,7 @@ import retrofit.Retrofit;
 public class MealsFragment extends Fragment {
 
     @Inject
-    InstamealApi instamealApi;
+    InstamealsApi instamealsApi;
 
     @Bind(R.id.meals_list)
     RecyclerView mealList;
@@ -72,7 +72,7 @@ public class MealsFragment extends Fragment {
 
     private void loadMeals() {
 
-        instamealApi.getMeals(new LatLng(39.15, -84.42), 10, new Callback<MealResponse>() {
+        instamealsApi.getMeals(new LatLng(39.15, -84.42), 10, new Callback<MealResponse>() {
             @Override
             public void onResponse(Response<MealResponse> response, Retrofit retrofit) {
                 if (response.isSuccess()) {
