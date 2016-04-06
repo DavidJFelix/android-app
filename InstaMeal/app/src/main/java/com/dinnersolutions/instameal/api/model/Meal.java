@@ -1,27 +1,22 @@
 package com.dinnersolutions.instameal.api.model;
 
 import java.util.List;
+import java.util.UUID;
 
-/**
- * Created by Dejan Ristic on 2/23/16.
- */
 public class Meal {
+    private UUID id;
+    private String name;
+    private String description;
+    private List<Allergen> allergens;
+    private List<DietaryFilter> dietaryFilters;
+    private List<Ingredient> ingredients;
+    private String availableTo;
+    private String availableFrom;
 
-    public String name;
-    public String mealId;
-    public String imageUrl;
-    public String description;
-    public String availableTo;
-    public String availableFrom;
-
-    public float price;
-    public int portions;
+    private Price price;
+    private int portions;
 
     public boolean isActive;
 
-    public List<Ingredient> ingredients;
-    public List<Allergen> allergens;
-
-    public MealLocation location;
 
 }
