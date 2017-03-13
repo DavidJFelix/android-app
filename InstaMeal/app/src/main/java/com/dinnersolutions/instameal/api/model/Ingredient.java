@@ -1,8 +1,8 @@
 package com.dinnersolutions.instameal.api.model;
 
-/**
- * Created by Dejan Ristic on 2/23/16.
- */
+import java.util.UUID;
+
 public class Ingredient {
+    public UUID id;
     public String name;
 }

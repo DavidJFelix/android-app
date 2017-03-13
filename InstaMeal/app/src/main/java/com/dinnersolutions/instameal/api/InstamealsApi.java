@@ -2,7 +2,6 @@ package com.dinnersolutions.instameal.api;
 
 import com.dinnersolutions.instameal.api.request.TokenRequest;
 import com.dinnersolutions.instameal.api.response.MealResponse;
-import com.dinnersolutions.instameal.api.response.TokenUserResponse;
 import com.google.android.gms.maps.model.LatLng;
 
 import retrofit.Call;
@@ -11,12 +10,12 @@ import retrofit.Callback;
 /**
  * Created by Dejan Ristic on 1/19/16.
  */
-public class InstamealApi {
+public class InstamealsApi {
 
-    private InstamealService service;
+    private InstamealsService service;
     private AuthManager authManager;
 
-    public InstamealApi(InstamealService service, AuthManager authManager) {
+    public InstamealsApi(InstamealsService service, AuthManager authManager) {
         this.service = service;
         this.authManager = authManager;
     }

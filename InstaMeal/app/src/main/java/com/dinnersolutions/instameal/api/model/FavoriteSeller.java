@@ -2,8 +2,8 @@ package com.dinnersolutions.instameal.api.model;
 
 import java.util.UUID;
 
-public class Allergen {
+public class FavoriteSeller {
     private UUID id;
-    private String name;
-    private String description;
+    private User seller;
+    private User favoriter;
 }
